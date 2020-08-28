@@ -16,14 +16,17 @@ struct Item {
 struct ContentView: View {
   @State var newItem = ""
   @State var items = [Item]()
+
+  func addNewItem() {
+    items.append(Item(text: newItem))
+    newItem = ""
+  }
+
   var body: some View {
     VStack(alignment: .leading) {
       HStack {
-        Button("+") {
-          items.append(Item(text: newItem))
-          newItem = ""
-        }
-        TextField("New todo item", text: $newItem)
+        Button("+", action: addNewItem)
+        TextField("New todo item", text: $newItem, onCommit: addNewItem)
       }
       List {
         ForEach(0..<items.count, id: \.self) { i in
