@@ -1,8 +1,6 @@
 name: Build and test with SwiftWasm
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
@@ -16,9 +14,3 @@ jobs:
       - uses: swiftwasm/swiftwasm-action@v5.3
         with:
           shell-action: carton bundle
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./Bundle
