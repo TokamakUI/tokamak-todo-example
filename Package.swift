@@ -6,7 +6,7 @@ let package = Package(
     .executable(name: "tokamak-todo-example", targets: ["tokamak-todo-example"]),
   ],
   dependencies: [
-    .package(name: "Tokamak", url: "https://github.com/TokamakUI/Tokamak", from: "0.3.0"),
+    .package(name: "Tokamak", url: "https://github.com/TokamakUI/Tokamak", from: "0.4.0"),
   ],
   targets: [
     .target(
